@@ -1,1 +1,5 @@
-Test: {{ .Get 1 }}
+{{ $goal := (index .Site.Data.bookgoals (string (.Get 0))) }}
+
+{{ with $goal }}
+   {{ .name }}
+{{ end }}
