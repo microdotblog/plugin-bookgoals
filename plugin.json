@@ -3,6 +3,6 @@
   "title": "Book reading goals",
   "description": "Add finished books for the year to your blog.",
   "includes": [
-    "/bookgoals.css"
+    "/css/bookgoals.css"
   ]
 }
