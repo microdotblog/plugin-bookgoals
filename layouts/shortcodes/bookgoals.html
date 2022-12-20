@@ -1,5 +1,7 @@
 {{ $goal := (index .Site.Data.bookgoals (string (.Get 0))) }}
 
 {{ with $goal }}
-   {{ .name }}
+  {{ range .books }}
+    <a href="https://micro.blog/books/{{ .isbn }}"><img src="{{ .cover_url }}" alt="{{ .title }}" width="100" height="120"></a>
+  {{ end }}
 {{ end }}
