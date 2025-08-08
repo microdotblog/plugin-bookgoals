@@ -1,11 +1,11 @@
-{{ $param := .Get 0 }}
-{{ $year := now.Year }}
+{{- $param := .Get 0 -}}
+{{- $year := now.Year -}}
 
-{{ if eq $param "progress" }}
-  {{ with index .Site.Data.bookgoals (string $year) }}
-    {{ .progress }} of {{ .value }}
-  {{ end }}
-{{ else }}
+{{- if eq $param "progress" -}}
+  {{- with index .Site.Data.bookgoals (string $year) -}}
+    {{- printf "%v of %v" .progress .value -}}
+  {{- end -}}
+{{- else -}}
   {{ $goal := index .Site.Data.bookgoals (string $param) }}
   {{ with $goal }}
     <div class="bookgoals">
@@ -14,4 +14,4 @@
       {{ end }}
     </div>
   {{ end }}
-{{ end }}
+{{- end -}}
